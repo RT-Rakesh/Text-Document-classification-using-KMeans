@@ -1,8 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 """
-Created on Fri Dec  8 18:07:35 2017
-
 @author: RT Rakesh
 """
 
@@ -15,14 +11,14 @@ start = time.time() # Start time
 
 # We need to provide the path where the Test data documents are saved.
 # The test data must be saved as individual files and stored in the path mentioned. 
-test_document_path="/home/iamdatapreneur/Downloads/Part2"
+test_document_path="Path where the test/new documents are stored"
 
 # We are reading all the filenames and creating a list filenames.
 filenames=[os.path.join(test_document_path, each)
             for each in os.listdir(test_document_path)]
 
 # We need to provide the path where the saved Vectorizer and Kmean Model is Saved.
-trained_model_path="/home/iamdatapreneur/Downloads/"
+trained_model_path="path where the trained model and vectorizer are stored."
 
 #Load the vectorizer and tranforming the test file.
 loaded_vectorizer = joblib.load(trained_model_path + "finalized_tfidf_vectorizer")
