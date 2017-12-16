@@ -1,8 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 """
-Created on Thu Dec  7 14:24:42 2017
-
 @author: RT Rakesh
 """
 
@@ -19,7 +15,7 @@ from sklearn.externals import joblib
 start = time.time() # Start time
 
 #  we have to declare directory path where our data is present.
-document_path="/home/iamdatapreneur/Downloads/Assignment_samples/"
+document_path="Path where the documents are stored."
 
 # We are reading all the filenames and creating a list filenames.
 filenames=[os.path.join(document_path, each)
@@ -45,7 +41,7 @@ for k in K:
     kmeanModel.fit(tfidf_result)
     Cluster_error.append( kmeanModel.inertia_ )
     
-clusters_df = pd.DataFrame( { "num_clusters":K, "cluster_errors": distortions } )
+clusters_df = pd.DataFrame( { "num_clusters":K, "cluster_errors": cluster_errors } )
 Print(clusters_df)
 
 # Plot the elbow Plot
@@ -74,7 +70,7 @@ for i in range(num_clusters):
 
 #Saving the model for future application
 # Setting the output path.
-output_path="/home/iamdatapreneur/Downloads/"
+output_path="Path to store the model and vectorizer"
 
 #Saving the Vectorizer and the kmeans model for future prediction.
 joblib.dump(kmeanModel, output_path + 'finalized_Kmeans_model')
